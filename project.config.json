@@ -2,7 +2,7 @@
   "miniprogramRoot": "./dist",
   "projectname": "weapp",
   "description": "diancanapp",
-  "appid": "touristappid",
+  "appid": "wx5ef59f42ea6b6b2a",
   "setting": {
     "urlCheck": true,
     "es6": false,
