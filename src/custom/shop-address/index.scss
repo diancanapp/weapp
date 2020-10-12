@@ -1,0 +1,22 @@
+.wzz-shop-address{
+  background: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  align-items: center;
+  .dcicon-location{
+    margin-right: 20px;
+    font-size: 48px;
+    color: #666;
+  }
+  .content{
+    line-height: 36px;
+  }
+  .address{
+    font-size: 26px;
+  }
+  .distance{
+      font-size: 22px;
+      color: #999999;
+  }
+}
