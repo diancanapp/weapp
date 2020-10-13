@@ -24,7 +24,7 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: Build
-      run: npm install && npm run build
+      run: npm install && npm run build:h5
     - name: Deploy to server
       uses: easingthemes/ssh-deploy@v2.1.4
       env:
