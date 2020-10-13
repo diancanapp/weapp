@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import Taro from '@tarojs/taro';
+import Taro, { eventCenter, getCurrentInstance} from '@tarojs/taro';
 import { View, Text, Image, ScrollView } from '@tarojs/components'
 import PropTypes, { InferProps } from 'prop-types'
 import { product } from '../../../types/diancan';
@@ -11,7 +11,9 @@ interface WzzOrderMenuProps {
 
 interface WzzOrderMenuState {
   tabView: string,
-  productActiveIndex: number
+  productActiveIndex: number,
+  productView: string,
+  productScrollTop: Array<number>
 }
 
 export default class WzzOrderMenu extends Component<WzzOrderMenuProps, WzzOrderMenuState> {
@@ -23,22 +25,72 @@ export default class WzzOrderMenu extends Component<WzzOrderMenuProps, WzzOrderM
     super(props)
     this.state = {
       tabView: '',
-      productActiveIndex: 0
+      productActiveIndex: 0,
+      productView: 'index-0',
+      productScrollTop: []
     }
   }
 
   private tapMenuItem = (idx: number) => {
+    console.log(idx)
     this.setState({
-      productActiveIndex: idx
+      productActiveIndex: idx,
+      productView: `index-${idx}`
     })
   }
 
+  calcScrollTop () {
+    const { products } = this.props;
+    const _this = this;
+    eventCenter.once(getCurrentInstance().router!.onReady, () => {
+      if ( products && !(products.length < 1)) {
+        Taro.createSelectorQuery().selectAll(".productKind").boundingClientRect(function(rect) {
+            let productScrollTop : Array<number> = [];
+            productScrollTop.push(0);
+            let r = 0;
+            (rect as any).map(function(item) {
+                 r += item.height;
+                 productScrollTop.push(r);
+            })
+            
+            console.log(productScrollTop)
+            
+            _this.setState({
+                productScrollTop
+            });
+        }).exec();
+    }    
+    })
+  }
+
+  productScrollHandler (e) {
+    const { scrollTop } = e.detail;
+    console.log('scrollTop', scrollTop)
+    const { productScrollTop, productActiveIndex } = this.state;
+    let activeIndex = 0;
+    for (let i = 0; i< productScrollTop.length; i++) {
+      console.log('scrollTop + 15', scrollTop + 15)
+      console.log('productScrollTop[i]', productScrollTop[i])
+      console.log('scrollTop - 15', scrollTop - 15)
+      console.log('productScrollTop[i+1]', productScrollTop[i+1])
+      if ((scrollTop) > productScrollTop[i] && (scrollTop) < productScrollTop[i+1]) {
+        activeIndex = i;
+        break;
+      }
+    }
+    if (activeIndex > -1 && activeIndex != productActiveIndex) {
+      this.setState({
+        productActiveIndex: activeIndex
+      })
+    }
+  }
+
   componentDidMount () {
-    
+    this.calcScrollTop()
   }
 
   public render(): JSX.Element {
-    const { tabView, productActiveIndex } = this.state;
+    const { tabView, productActiveIndex, productView } = this.state;
 
     const menuItems = this.props.products.map((product, idx) =>
       <View onClick={() => this.tapMenuItem(idx)} className={`menu-item ${productActiveIndex === idx ? 'active': ''}`} id={`tab-${idx}`} key={product.kindName}>
@@ -129,7 +181,7 @@ export default class WzzOrderMenu extends Component<WzzOrderMenuProps, WzzOrderM
           </ScrollView>
         </View>
         <View className="product-box">
-          <ScrollView scrollY className="product-view" >
+          <ScrollView scrollY onScroll={this.productScrollHandler.bind(this)} className="product-view" scrollIntoView={productView}>
             { kindBox }
           </ScrollView>
         </View>

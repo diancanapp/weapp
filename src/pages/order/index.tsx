@@ -131,22 +131,6 @@ export default class Index extends Component<{}, IndexState> {
             twoKindId: 2,
             productList: [
               {
-                productId: 1,
-                defaultPicUrl: 'https://static.wozaizhao.com/food/1.jpg',
-                promotionMsg: '充5送2',
-                maxAmount: 9,
-                name: '麻辣小龙虾',
-                tagList: [
-                  {
-                    content: '新品',
-                    bgColor: 'orange'
-                  }
-                ],
-                enName: 'Spicy crayfish',
-                skuName: '大份/热菜',
-                initialPrice: 15
-              },
-              {
                 productId: 2,
                 defaultPicUrl: 'https://static.wozaizhao.com/food/2.jpg',
                 promotionMsg: '充5送2',
@@ -200,6 +184,22 @@ export default class Index extends Component<{}, IndexState> {
                 enName: 'Filipino Dumplings',
                 skuName: '每份20只',
                 initialPrice: 20
+              },
+              {
+                productId: 1,
+                defaultPicUrl: 'https://static.wozaizhao.com/food/1.jpg',
+                promotionMsg: '充5送2',
+                maxAmount: 9,
+                name: '麻辣小龙虾',
+                tagList: [
+                  {
+                    content: '新品',
+                    bgColor: 'orange'
+                  }
+                ],
+                enName: 'Spicy crayfish',
+                skuName: '大份/热菜',
+                initialPrice: 15
               }
             ]
           }  
@@ -220,33 +220,6 @@ export default class Index extends Component<{}, IndexState> {
             twoKindId: 3,
             productList: [
               {
-                productId: 1,
-                defaultPicUrl: 'https://static.wozaizhao.com/food/1.jpg',
-                promotionMsg: '充5送2',
-                maxAmount: 9,
-                name: '麻辣小龙虾',
-                tagList: [
-                  {
-                    content: '新品',
-                    bgColor: 'orange'
-                  }
-                ],
-                enName: 'Spicy crayfish',
-                skuName: '大份/热菜',
-                initialPrice: 15
-              },
-              {
-                productId: 2,
-                defaultPicUrl: 'https://static.wozaizhao.com/food/2.jpg',
-                promotionMsg: '充5送2',
-                maxAmount: 0,
-                name: '中秋好礼',
-                tagList: [],
-                enName: 'Mid-autumn gift',
-                skuName: '中秋好礼礼盒装',
-                initialPrice: 16
-              },
-              {
                 productId: 3,
                 defaultPicUrl: 'https://static.wozaizhao.com/food/3.jpg',
                 promotionMsg: '充5送2',
@@ -289,6 +262,33 @@ export default class Index extends Component<{}, IndexState> {
                 enName: 'Filipino Dumplings',
                 skuName: '每份20只',
                 initialPrice: 20
+              },
+              {
+                productId: 1,
+                defaultPicUrl: 'https://static.wozaizhao.com/food/1.jpg',
+                promotionMsg: '充5送2',
+                maxAmount: 9,
+                name: '麻辣小龙虾',
+                tagList: [
+                  {
+                    content: '新品',
+                    bgColor: 'orange'
+                  }
+                ],
+                enName: 'Spicy crayfish',
+                skuName: '大份/热菜',
+                initialPrice: 15
+              },
+              {
+                productId: 2,
+                defaultPicUrl: 'https://static.wozaizhao.com/food/2.jpg',
+                promotionMsg: '充5送2',
+                maxAmount: 0,
+                name: '中秋好礼',
+                tagList: [],
+                enName: 'Mid-autumn gift',
+                skuName: '中秋好礼礼盒装',
+                initialPrice: 16
               }
             ]
           }  
@@ -309,6 +309,39 @@ export default class Index extends Component<{}, IndexState> {
             twoKindId: 4,
             productList: [
               {
+                productId: 4,
+                defaultPicUrl: 'https://static.wozaizhao.com/food/4.jpg',
+                promotionMsg: '充5送2',
+                maxAmount: 9,
+                name: '炒三鲜',
+                tagList: [],
+                enName: 'Fried three fresh',
+                skuName: '时令鲜蔬',
+                initialPrice: 18
+              },
+              {
+                productId: 5,
+                defaultPicUrl: 'https://static.wozaizhao.com/food/5.jpg',
+                promotionMsg: '充5送2',
+                maxAmount: 9,
+                name: '板烧鸡腿',
+                tagList: [],
+                enName: 'Grilled Chicken Drumsticks',
+                skuName: '每份3只',
+                initialPrice: 19
+              },
+              {
+                productId: 6,
+                defaultPicUrl: 'https://static.wozaizhao.com/food/6.jpg',
+                promotionMsg: '充5送2',
+                maxAmount: 9,
+                name: '菲菜饺子',
+                tagList: [],
+                enName: 'Filipino Dumplings',
+                skuName: '每份20只',
+                initialPrice: 20
+              },
+              {
                 productId: 1,
                 defaultPicUrl: 'https://static.wozaizhao.com/food/1.jpg',
                 promotionMsg: '充5送2',
@@ -345,39 +378,6 @@ export default class Index extends Component<{}, IndexState> {
                 enName: 'Small balls',
                 skuName: '每份12颗',
                 initialPrice: 17
-              },
-              {
-                productId: 4,
-                defaultPicUrl: 'https://static.wozaizhao.com/food/4.jpg',
-                promotionMsg: '充5送2',
-                maxAmount: 9,
-                name: '炒三鲜',
-                tagList: [],
-                enName: 'Fried three fresh',
-                skuName: '时令鲜蔬',
-                initialPrice: 18
-              },
-              {
-                productId: 5,
-                defaultPicUrl: 'https://static.wozaizhao.com/food/5.jpg',
-                promotionMsg: '充5送2',
-                maxAmount: 9,
-                name: '板烧鸡腿',
-                tagList: [],
-                enName: 'Grilled Chicken Drumsticks',
-                skuName: '每份3只',
-                initialPrice: 19
-              },
-              {
-                productId: 6,
-                defaultPicUrl: 'https://static.wozaizhao.com/food/6.jpg',
-                promotionMsg: '充5送2',
-                maxAmount: 9,
-                name: '菲菜饺子',
-                tagList: [],
-                enName: 'Filipino Dumplings',
-                skuName: '每份20只',
-                initialPrice: 20
               }
             ]
           }  
